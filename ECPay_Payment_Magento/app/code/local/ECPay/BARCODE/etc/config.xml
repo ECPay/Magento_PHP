@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+    <modules>
+        <ECPay_BARCODE>
+            <!-- declare module's version information for database updates -->
+            <version>1.1.0316</version>
+        </ECPay_BARCODE>
+    </modules>
+
+    <global>
+        <helpers>
+            <barcode>
+                <class>ECPay_BARCODE_Helper</class>
+            </barcode>
+        </helpers>
+        <blocks>
+            <barcode>
+                <class>ECPay_BARCODE_Block</class>
+            </barcode>
+        </blocks>
+
+        <!-- declare model group for new module -->
+        <models>
+            <barcode>
+                <class>ECPay_BARCODE_Model</class>
+            </barcode>
+        </models>
+
+        <!-- declare resource setup for new module -->
+        <resources>
+            <barcode_setup>
+                <setup>
+                    <module>ECPay_BARCODE</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </barcode_setup>
+            <barcode_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </barcode_write>
+            <barcode_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </barcode_read>
+        </resources>
+    </global>
+  
+    <adminhtml>
+        <translate>
+            <modules>
+                <ECPay_BARCODE>
+                    <files>
+                        <default>ECPay_Modules.csv</default>
+                    </files>
+                </ECPay_BARCODE>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <frontend>
+        <routers>
+            <barcode>
+                <use>standard</use>
+                <args>
+                    <module>ECPay_BARCODE</module>
+                    <frontName>barcode</frontName>
+                </args>
+            </barcode>
+        </routers>
+        <layout>
+            <updates>
+                <barcode>
+                    <file>ecpay.xml</file>
+                </barcode>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <ECPay_BARCODE>
+                    <files>
+                        <default>ECPay_Modules.csv</default>
+                    </files>
+                </ECPay_BARCODE>
+            </modules>
+        </translate>
+    </frontend>
+
+    <!-- declare default configuration values for this module -->
+    <default>
+        <payment>
+            <barcode>
+                <active>0</active>
+                <model>barcode/all</model>
+                <order_status>pending</order_status>
+                <title>綠界(條碼繳費)</title>
+                <allowspecific>0</allowspecific>
+                <use_store_currency>0</use_store_currency>
+                <request_type>authorize</request_type>
+                <test_mode>1</test_mode>
+                <fix_contact>1</fix_contact>
+                <hide_contact>0</hide_contact>
+                <enable_online_operations>0</enable_online_operations>
+                <merchant_id>2000132</merchant_id>
+                <hash_iv>v77hoKGq4kWxNNIS</hash_iv>
+                <hash_key>5294y06JbISpM5x9</hash_key>
+            </barcode>
+        </payment>
+    </default>
+</config>
