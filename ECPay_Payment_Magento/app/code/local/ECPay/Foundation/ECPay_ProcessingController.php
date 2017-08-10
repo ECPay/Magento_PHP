@@ -205,8 +205,6 @@ class ECPay_ProcessingController extends Mage_Core_Controller_Front_Action {
                 $oOrder->save();
                 
                 $isSuccess = true;
-            } elseif ($request['RtnCode'] == '1' && ($oOrder->getState() == Mage_Sales_Model_Order::STATE_PROCESSING || $oOrder->getState() == Mage_Sales_Model_Order::STATE_COMPLETE)) {
-                $isSuccess = true;
             } else {
                 $oOrder->setState(Mage_Sales_Model_Order::STATE_HOLDED, TRUE, '失敗');
                 $oOrder->save();
