@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Ecpay_EcpayPayment>
+			<version>2.0.0821</version>
+		</Ecpay_EcpayPayment>
+	</modules>
+
+	<global>
+		<models>
+			<ecpaypayment>
+				<class>Ecpay_EcpayPayment_Model</class>
+			</ecpaypayment>
+		</models>
+		<blocks>
+			<ecpaypayment>
+				<class>Ecpay_EcpayPayment_Block</class>
+			</ecpaypayment>
+		</blocks>
+		<helpers>
+			<ecpaypayment>
+				<class>Ecpay_EcpayPayment_Helper</class>
+			</ecpaypayment>
+		</helpers>
+	</global>
+
+	<default>
+		<payment>
+			<ecpaypayment>
+				<active>0</active>
+				<model>ecpaypayment/payment</model>
+				<title>綠界整合金流</title>
+				<ecpay_merchant_id>2000132</ecpay_merchant_id>
+				<ecpay_hash_key>5294y06JbISpM5x9</ecpay_hash_key>
+				<ecpay_hash_iv>v77hoKGq4kWxNNIS</ecpay_hash_iv>
+				<ecpay_create_status>pending</ecpay_create_status>
+				<ecpay_success_status>processing</ecpay_success_status>
+				<ecpay_failed_status>holded</ecpay_failed_status>
+				<allowspecific>0</allowspecific>
+				<payment_action>sale</payment_action>
+			</ecpaypayment>
+		</payment>
+	</default>
+  
+    <adminhtml>
+        <translate>
+            <modules>
+                <Ecpay_EcpayPayment>
+                    <files>
+                        <default>Ecpay_Payment.csv</default>
+                    </files>
+                </Ecpay_EcpayPayment>
+            </modules>
+        </translate>
+    </adminhtml>
+
+	<frontend>
+		<routers>
+			<ecpaypayment>
+				<use>standard</use>
+				<args>
+					<module>Ecpay_EcpayPayment</module>
+					<frontName>ecpaypayment</frontName>
+				</args>
+			</ecpaypayment>
+		</routers>
+        <translate>
+            <modules>
+                <Ecpay_EcpayPayment>
+                    <files>
+                        <default>Ecpay_Payment.csv</default>
+                    </files>
+                </Ecpay_EcpayPayment>
+            </modules>
+        </translate>
+	</frontend>
+</config>
