@@ -1,6 +1,6 @@
 <?php
 
-class Ecpay_EcpayPayment_PaymentController extends Mage_Core_Controller_Front_Action
+class Ecpay_Ecpaypayment_PaymentController extends Mage_Core_Controller_Front_Action
 {
     public function redirectAction()
     {

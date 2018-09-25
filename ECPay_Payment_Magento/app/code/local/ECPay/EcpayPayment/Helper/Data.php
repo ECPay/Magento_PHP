@@ -3,12 +3,13 @@
 include_once('Library/ECPay.Payment.Integration.php');
 include_once('Library/EcpayCartLibrary.php');
 
-class Ecpay_EcpayPayment_Helper_Data extends Mage_Core_Helper_Abstract
+class Ecpay_Ecpaypayment_Helper_Data extends Mage_Core_Helper_Abstract
 {
     private $paymentModel = null;
     private $prefix = 'ecpay_';
+    private $updateNotify = false;
     private $resultNotify = true;
-    private $obtainCodeNotify = false;
+    private $obtainCodeNotify = true;
 
     private $errorMessages = array();
 
@@ -90,11 +91,11 @@ class Ecpay_EcpayPayment_Helper_Data extends Mage_Core_Helper_Abstract
             $pattern = $this->__('ecpay_payment_order_comment_payment_method');
             $paymentName = $this->getPaymentTranslation($choosenPayment);
             $comment = sprintf($pattern, $paymentName);
-            $order->setState($createStatus, $createStatus, $comment, false)->save();
+            $order->setState($createStatus, $createStatus, $comment, $this->updateNotify)->save();
 
             $checkoutSession = $this->getCheckoutSession();
-            $checkoutSession->setEcpayPaymentQuoteId($checkoutSession->getQuoteId());
-            $checkoutSession->setEcpayPaymentRealOrderId($orderId);
+            $checkoutSession->setEcpaypaymentQuoteId($checkoutSession->getQuoteId());
+            $checkoutSession->setEcpaypaymentRealOrderId($orderId);
             $checkoutSession->getQuote()->setIsActive(false)->save();
             $checkoutSession->clear();
 
@@ -108,7 +109,7 @@ class Ecpay_EcpayPayment_Helper_Data extends Mage_Core_Helper_Abstract
                 'orderId' => $orderId,
                 'total' => $order->getGrandTotal(),
                 'itemName' => $this->__('ecpay_payment_redirect_text_item_name'),
-                'version' => $this->prefix . 'module_magento_2.0.0821',
+                'version' => $this->prefix . 'module_magento_2.1.0206',
             );
             $sdkHelper->checkout($helperData);
         } catch (Exception $e) {

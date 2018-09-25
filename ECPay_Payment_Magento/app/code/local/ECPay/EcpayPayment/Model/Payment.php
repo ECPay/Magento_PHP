@@ -1,7 +1,5 @@
 <?php
-// require_once(Mage::getBaseDir('app') . '/code/local/ECPay/ECPay.Payment.Integration.php');
-
-class ECPay_EcpayPayment_Model_Payment extends Mage_Payment_Model_Method_Abstract
+class ECPay_Ecpaypayment_Model_Payment extends Mage_Payment_Model_Method_Abstract
 {
     protected $_code  = 'ecpaypayment';
     protected $_formBlockType = 'ecpaypayment/form_ecpaypayment';

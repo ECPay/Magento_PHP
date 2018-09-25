@@ -1,25 +1,25 @@
 <?xml version="1.0"?>
 <config>
 	<modules>
-		<Ecpay_EcpayPayment>
-			<version>2.0.0821</version>
-		</Ecpay_EcpayPayment>
+		<Ecpay_Ecpaypayment>
+			<version>2.1.0206</version>
+		</Ecpay_Ecpaypayment>
 	</modules>
 
 	<global>
 		<models>
 			<ecpaypayment>
-				<class>Ecpay_EcpayPayment_Model</class>
+				<class>Ecpay_Ecpaypayment_Model</class>
 			</ecpaypayment>
 		</models>
 		<blocks>
 			<ecpaypayment>
-				<class>Ecpay_EcpayPayment_Block</class>
+				<class>Ecpay_Ecpaypayment_Block</class>
 			</ecpaypayment>
 		</blocks>
 		<helpers>
 			<ecpaypayment>
-				<class>Ecpay_EcpayPayment_Helper</class>
+				<class>Ecpay_Ecpaypayment_Helper</class>
 			</ecpaypayment>
 		</helpers>
 	</global>
@@ -45,11 +45,11 @@
     <adminhtml>
         <translate>
             <modules>
-                <Ecpay_EcpayPayment>
+                <Ecpay_Ecpaypayment>
                     <files>
-                        <default>Ecpay_Payment.csv</default>
+                        <default>Ecpay_Ecpaypayment.csv</default>
                     </files>
-                </Ecpay_EcpayPayment>
+                </Ecpay_Ecpaypayment>
             </modules>
         </translate>
     </adminhtml>
@@ -59,18 +59,18 @@
 			<ecpaypayment>
 				<use>standard</use>
 				<args>
-					<module>Ecpay_EcpayPayment</module>
+					<module>Ecpay_Ecpaypayment</module>
 					<frontName>ecpaypayment</frontName>
 				</args>
 			</ecpaypayment>
 		</routers>
         <translate>
             <modules>
-                <Ecpay_EcpayPayment>
+                <Ecpay_Ecpaypayment>
                     <files>
-                        <default>Ecpay_Payment.csv</default>
+                        <default>Ecpay_Ecpaypayment.csv</default>
                     </files>
-                </Ecpay_EcpayPayment>
+                </Ecpay_Ecpaypayment>
             </modules>
         </translate>
 	</frontend>

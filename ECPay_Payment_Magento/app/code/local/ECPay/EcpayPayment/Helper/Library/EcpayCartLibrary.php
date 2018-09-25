@@ -80,6 +80,7 @@ class EcpayCartLibrary
         $aio->Send['Items'][] = [
             'Name' => $data['itemName'],
             'Price' => $aio->Send['TotalAmount'],
+            'Currency'  => $data['currency'],
             'Quantity' => 1,
             'URL' => '',
         ];

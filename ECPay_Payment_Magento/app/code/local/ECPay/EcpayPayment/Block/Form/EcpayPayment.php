@@ -1,6 +1,6 @@
 <?php
 
-class Ecpay_EcpayPayment_Block_Form_EcpayPayment extends Mage_Payment_Block_Form
+class Ecpay_Ecpaypayment_Block_Form_Ecpaypayment extends Mage_Payment_Block_Form
 {
     protected function _construct()
     {
