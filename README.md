@@ -7,7 +7,9 @@
 
 
 ## 2. ¤ä´©ª©¥»
-   - Magento Version 1.9.2.4
+	- Magento Version 1.9.2.4
+	- Magento Version 1.9.3.3
+	- Magento Version 1.9.3.6
   
  
 
